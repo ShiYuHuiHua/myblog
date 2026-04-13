@@ -2,8 +2,8 @@
 
 如果需要使用，新建一个.env文件用于账号密码后端验证  
 # 管理员账号密码
-ADMIN_USERNAME=“   ”
-ADMIN_PASSWORD="   "
+ADMIN_USERNAME=“   ”  
+ADMIN_PASSWORD="   "  
 
 新建一个“头像.jpg”与“背景.jpg”作为头像与背景图即可  
 
