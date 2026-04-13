@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频列表 - 时雨绘华的个人博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-blog"></i>
+                <span>时雨绘华的博客</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="articles.html" class="nav-link">文章</a></li>
+                <li><a href="video.html" class="nav-link active">视频</a></li>
+                <li><a href="about.html" class="nav-link">关于</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <h1>视频列表</h1>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <!-- 搜索框 -->
+                <div class="search-container" style="margin-bottom: 2rem; display: flex; justify-content: center;">
+                    <div style="position: relative; width: 100%; max-width: 600px;">
+                        <input type="text" id="videoSearch" placeholder="搜索视频标题..." onkeypress="if(event.key === 'Enter') searchVideos()" style="width: 100%; padding: 0.875rem 1.5rem; border: 1px solid #ddd; border-radius: 30px; font-size: 1rem;">
+                        <button onclick="searchVideos()" style="position: absolute; right: 0; top: 0; height: 100%; padding: 0 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 0 30px 30px 0; cursor: pointer;">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- 视频列表 -->
+                <div class="videos-list">
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem;">
+                    <a href="#" class="btn" style="padding: 0.5rem 1rem;"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem;">1</a>
+                    <a href="#" class="btn" style="padding: 0.5rem 1rem;">2</a>
+                    <a href="#" class="btn" style="padding: 0.5rem 1rem;">3</a>
+                    <span style="padding: 0.5rem;">...</span>
+                    <a href="#" class="btn" style="padding: 0.5rem 1rem;">8</a>
+                    <a href="#" class="btn" style="padding: 0.5rem 1rem;"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer style="background: #1a1a2e; color: #fff; text-align: center; padding: 1.5rem 0; font-size: 0.9rem;">
+        <div class="container">
+            <p style="margin: 0; opacity: 0.8;"><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" style="color: inherit; text-decoration: none;">鄂ICP备2025089804号</a></p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
