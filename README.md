@@ -1,7 +1,6 @@
 一个完全由AI生成的个人博客网站  
 
 如果需要使用，新建一个.env文件用于账号密码后端验证  
-# 管理员账号密码
 ADMIN_USERNAME=“   ”  
 ADMIN_PASSWORD="   "  
 
