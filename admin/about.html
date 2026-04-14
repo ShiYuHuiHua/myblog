@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人管理 - 时雨绘华的博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-blog"></i>
+                <span>博客管理系统</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="about.html" class="nav-item active">
+                    <i class="fas fa-user-edit"></i>
+                    <span>个人管理</span>
+                </a>
+                <a href="articles.html" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>文章管理</span>
+                </a>
+                <a href="videos.html" class="nav-item">
+                    <i class="fas fa-video"></i>
+                    <span>视频管理</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../index.html" target="_blank" class="btn btn-outline btn-sm">
+                    <i class="fas fa-external-link-alt"></i>
+                    查看前台
+                </a>
+                <a href="../login.html" class="btn btn-danger btn-sm" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    退出登录
+                </a>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>个人管理</h1>
+                <button class="btn btn-primary" onclick="saveAboutData()">
+                    <i class="fas fa-save"></i>
+                    保存更改
+                </button>
+            </header>
+
+            <div class="admin-content">
+                <div class="form-container">
+                    <form id="aboutForm" class="content-form">
+                        <h3><i class="fas fa-user"></i> 基本信息</h3>
+                        <div class="form-group">
+                            <label for="aboutName">姓名 *</label>
+                            <input type="text" id="aboutName" required placeholder="请输入姓名">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="aboutDesc">个人描述 *</label>
+                            <textarea id="aboutDesc" rows="4" required placeholder="请输入个人简介（50-100 字）"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="aboutLocation">所在地</label>
+                            <input type="text" id="aboutLocation" placeholder="例如：中国 · 武汉">
+                        </div>
+
+                        <h3><i class="fas fa-envelope"></i> 联系方式</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="aboutEmail">邮箱</label>
+                                <input type="email" id="aboutEmail" placeholder="请输入邮箱">
+                            </div>
+                            <div class="form-group">
+                                <label for="aboutPhone">电话</label>
+                                <input type="text" id="aboutPhone" placeholder="请输入电话">
+                            </div>
+                        </div>
+
+                        <h3><i class="fas fa-briefcase"></i> 工作经历</h3>
+                        <div id="workExperiences">
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="addWorkExperience()">
+                            <i class="fas fa-plus"></i>
+                            添加工作经历
+                        </button>
+
+                        <h3><i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                        <div id="educationHistory">
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="addEducation()">
+                            <i class="fas fa-plus"></i>
+                            添加教育背景
+                        </button>
+
+                        <div class="form-actions" style="margin-top: 2rem;">
+                            <button type="button" class="btn btn-primary" onclick="saveAboutData()">
+                                <i class="fas fa-save"></i>
+                                保存更改
+                            </button>
+                            <button type="button" class="btn btn-outline" onclick="loadAboutData()">
+                                <i class="fas fa-undo"></i>
+                                重置
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

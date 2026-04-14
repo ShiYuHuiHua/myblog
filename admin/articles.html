@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理 - 时雨绘华的博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-blog"></i>
+                <span>博客管理系统</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-user-edit"></i>
+                    <span>个人管理</span>
+                </a>
+                <a href="articles.html" class="nav-item active">
+                    <i class="fas fa-file-alt"></i>
+                    <span>文章管理</span>
+                </a>
+                <a href="videos.html" class="nav-item">
+                    <i class="fas fa-video"></i>
+                    <span>视频管理</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../index.html" target="_blank" class="btn btn-outline btn-sm">
+                    <i class="fas fa-external-link-alt"></i>
+                    查看前台
+                </a>
+                <a href="../login.html" class="btn btn-danger btn-sm" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    退出登录
+                </a>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>文章管理</h1>
+                <button class="btn btn-primary" onclick="showArticleForm()">
+                    <i class="fas fa-plus"></i>
+                    新建文章
+                </button>
+            </header>
+
+            <div class="admin-content">
+                <div id="articleList" class="content-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="articlesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="articleForm" class="form-container" style="display: none;">
+                    <div class="form-header">
+                        <h2 id="formTitle">新建文章</h2>
+                        <button class="btn btn-close" onclick="hideArticleForm()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="saveArticleForm" class="content-form">
+                        <input type="hidden" id="articleId">
+                        <div class="form-group">
+                            <label for="articleTitle">标题 *</label>
+                            <input type="text" id="articleTitle" required placeholder="请输入文章标题">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="articleSummary">摘要</label>
+                            <textarea id="articleSummary" rows="3" placeholder="请输入文章摘要（100-200 字）"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleContent">正文 URL *</label>
+                            <input type="url" id="articleContent" required placeholder="请输入文章内容的URL链接">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i>
+                                保存
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="hideArticleForm()">
+                                <i class="fas fa-times"></i>
+                                取消
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
